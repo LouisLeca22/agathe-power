@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --legacy-peer-deps",
+    "install-dependencies": " npm run install-client && npm run install-server --legacy-peer-deps",
+    "setup-production": "npm run install-client && npm run build-client && npm install",
+    "build-client": "cd client && npm run build --legacy-peer-deps",
+    "install-client": "cd client && npm install --legacy-peer-deps",
+    "server": "nodemon index --ignore client",
+    "client": "npm start --prefix client",
+    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.1.5",
+    "stripe": "^8.195.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.15"
+  }
+}
