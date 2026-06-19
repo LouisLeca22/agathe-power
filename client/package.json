@@ -1,8 +1,5 @@
 {
   "name": "e-commerce",
-  "overrides": {
-    "ajv": "^8.17.1"
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
